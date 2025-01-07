@@ -1,5 +1,9 @@
 <template>
-  <base-dialog title="validation impossible" v-if="inputIsInvalid">
+  <base-dialog
+    title="validation impossible"
+    v-if="inputIsInvalid"
+    @close="confirmError"
+  >
     <template #default>
       <p>un champ est invalide</p>
     </template>

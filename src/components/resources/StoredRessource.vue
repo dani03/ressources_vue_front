@@ -3,6 +3,7 @@
     <Learning-ressource
       v-for="item in storedResources"
       :title="item.title"
+      :id="item.id"
       :link="item.link"
       :description="item.description"
       :key="item.id"
@@ -15,7 +16,6 @@ import LearningRessource from './LearningRessource.vue';
 export default {
   inject: ['storedResources'],
   components: { LearningRessource },
-
 };
 </script>
 

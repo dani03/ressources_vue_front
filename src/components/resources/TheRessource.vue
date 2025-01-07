@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       selectedTab: 'stored-ressource',
-    
+
       storedResources: [
         {
           id: 'official-guide',
@@ -59,6 +59,7 @@ export default {
     return {
       storedResources: this.storedResources,
       AddRessource: this.AddRessource,
+      removeRessource: this.removeRessource,
     };
   },
 
@@ -77,6 +78,13 @@ export default {
 
       this.storedResources.unshift(newResource);
       this.selectedTab = 'stored-ressource';
+    },
+
+    removeRessource(resourceId) {
+      const index = this.storedResources.findIndex((res) => res.id == resourceId);
+      this.storedResources.splice(index, 1);
+
+      //this.storedResources.remove(resourceId);
     },
   },
 };

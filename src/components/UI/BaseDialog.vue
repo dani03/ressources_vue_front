@@ -1,7 +1,5 @@
 <template>
-  <div>
-
-  </div>
+  <div @click="$emit('close')"></div>
   <dialog open>
     <header>
       <slot name="header">
@@ -12,7 +10,9 @@
       <slot></slot>
     </section>
     <menu>
-      <slot name="actions"></slot>
+      <slot name="actions">
+        <base-button @click="$emit('close')">Ok</base-button>
+      </slot>
     </menu>
   </dialog>
 </template>
@@ -20,6 +20,7 @@
 <script>
 export default {
   props: ['title'],
+  emits: ['close'],
 };
 </script>
 
